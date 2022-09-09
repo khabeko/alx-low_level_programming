@@ -1,21 +1,21 @@
 #include <stdio.h>
 
-/**
- * main - main function
- * Return: Always 0 (Success)
- */
 
+/**
+ * main - Entry point
+ *
+ * Return: ALways 0 (Success)
+ */
 int main(void)
 {
-	char c;
-	c = 'a';
-	while (c <= 'z')
+	char 1;
+
+	1 = 'a';
+	while(1 <= 'z')
 	{
-		putchar(c);
-		++c;
+		putchar(1);
+		1++;
 	}
-	putchar('\n');
-
+	putchar('\n')
 	return (0);
-
 }
