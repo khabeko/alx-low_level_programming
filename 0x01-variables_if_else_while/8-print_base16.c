@@ -8,17 +8,22 @@
 
 int main(void)
 {
-	int num;
-	char letter;
+	char a = 'a';
+	char n = '0';
 
-	for (num = 0; < 10; num++)
-		putchar((num % 10 ) + '0');
-
-	for (letter = 'a'; letter <= 'f'; letter++)
-		putchar(letter);
+	while (n <= '9')
+	{
+		putchar(n);
+		n++;
+	}
+	while (a <= 'f')
+	{
+		putchar(a);
+		a++;
+	}
 
 	putchar('\n');
 
-	return(0);
+	return (0);
 }
 
