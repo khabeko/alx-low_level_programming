@@ -9,9 +9,9 @@ int main(void)
 	char _putchar[] = "_putchar";
 	int i = 0;
 
-	while (_putcahr[i] != '\0')
+	while (_putchar[i] != '\0')
 	{
-		_puthar(_putchar[!]);
+		_putchar(_putchar[!]);
 		i++;
 	}
 	_putchar('\n');
