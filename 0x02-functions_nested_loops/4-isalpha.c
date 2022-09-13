@@ -4,7 +4,7 @@
  * _isalpha - check if the given character is lower case.
  * @c: character to test.
  *
- * return: 1 (True) else 0 (False)
+ * Return: 1 (True) else 0 (False)
  */
 int _isalpha(int c)
 {
