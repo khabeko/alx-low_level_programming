@@ -14,15 +14,15 @@ int main(void)
 	{
 		if (x % 3 == 0 && x % 5 != 0)
 		{
-			_putchar(" Fizz");
+			_putchar("Fizz");
 		}
 		else if (x % 5 == 0 && x % 3 != 0)
 		{
-			_putchar(" Buzz");
+			_putchar("Buzz");
 		}
 		else if (x % 3 == 0 && x % 5 == 0)
 		{
-			_putchar(" Fizz/Buzz");
+			_putchar("Fizz/Buzz");
 		}
 		else if (x == 1)
 		{
