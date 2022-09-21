@@ -1,46 +1,29 @@
 #include "main.h"
 
 /**
- * leet - leet encoder
- * @str: string to be encoded
+ *leet - encode strings
+ *@a: array
  *
- * Return: address of the encoded string
+ *Return: a
  */
 
-char *leet(char *str)
+char *leet(char *a)
 {
-	int i = 0;
+char s[] = "aAeEoOtTlL";
+char p[] = "4433007711";
 
-	while (str[i] != '\0')
-	{
-		str[i] = transform(str[i]);
-		i++;
-	}
-	return (str);
+int i = 0;
+int j = 0;
+
+while (a[i] != '\0')
+{
+for (j = 0; s[j] != '\0' && a[i] != s[j]; j++)
+;
+if (j < 10)
+{
+a[i] = p[j];
 }
-
-/**
- * transform - helper function to map a letter with it's leet encoding
- * @x: char to be encoded
- *
- * Return: the encoded char
- */
-
-char transform(char x)
-{
-	char mapping_low[8] = {'o', 'l', '\0', 'e', 'a', '\0', '\0', 't'};
-	char mapping_upper[8] = {'O', 'L', '\0', 'E', 'A', '\0', '\0', 'T'};
-	int i = 0;
-	char replacement = x;
-
-	while (i < 8)
-	{
-		if (x == mapping_low[i] || x == mapping_upper[i])
-		{
-			replacement = i + '0';
-			break;
-		}
-		i++;
-	}
-	return (replacement);
+i++;
+}
+return (a);
 }
