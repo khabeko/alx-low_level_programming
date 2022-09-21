@@ -1,29 +1,22 @@
 #include "main.h"
 
 /**
- *leet - encode strings
- *@a: array
+ * *leet - encodes a string into 1337
  *
- *Return: a
+ * @c: char to check
+ *
+ * Return: 0 is success
  */
-
-char *leet(char *a)
+char *leet(char *c)
 {
-char s[] = "aAeEoOtTlL";
-char p[] = "4433007711";
+	char a[] = "aeotlAEOTL";
+	char b[] = {'4', '3', '0', '7', '1',
+		    '4', '3', '0', '7', '1'};
+	int x, y;
 
-int i = 0;
-int j = 0;
-
-while (a[i] != '\0')
-{
-for (j = 0; s[j] != '\0' && a[i] != s[j]; j++)
-;
-if (j < 10)
-{
-a[i] = p[j];
-}
-i++;
-}
-return (a);
+	for (x = 0; c[x] != '\0'; x++)
+		for (y = 0; a[y] != '\0'; y++)
+			if (c[x] == a[y])
+				c[x] = b[y];
+	return (c);
 }
