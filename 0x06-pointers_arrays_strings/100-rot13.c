@@ -1,46 +1,38 @@
 #include "main.h"
 
 /**
- * rot13 - rot13 encoder
- * @str: string to be encoded
- *
- * Return: address of the encoded string
- */
+* rot13 - encodes a string using rot13 encryption
+* @s: a pointer given by main
+*
+* Description: change all alpha characters by rot13 rules
+* Return: returns the s pointer
+*/
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
 	int i = 0;
+	int j;
+	int begin[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A',
+'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
+'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+	int end[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'N', 'O',
+'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E',
+'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'};
 
-	while (str[i] != '\0')
+	while (s[i] != 0)
 	{
-		str[i] = transform_2(str[i]);
-		i++;
-	}
-	return (str);
-}
-
-/**
- * transform_2 - helper function to map a letter with it's rot13 encoding
- * @x: char to be encoded
- *
- * Return: the encoded char
- */
-
-char transform_2(char x)
-{
-	char one[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char two[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i = 0;
-	char replacement = x;
-
-	while (i < 52)
-	{
-		if (x == one[i])
+		for (j = 0; j < 52; j++)
 		{
-			replacement = two[i];
-			break;
+			if (s[i] == begin[j])
+			{
+				s[i] = end[j];
+				break;
+			}
+
 		}
 		i++;
 	}
-	return (replacement);
+	return (s);
 }
